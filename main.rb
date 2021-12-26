@@ -1,3 +1,4 @@
+require 'pry'
 require_relative "pokemon"
 require_relative "character"
 require_relative "rival"
