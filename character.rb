@@ -7,19 +7,16 @@ class Character
     @pokemon = params[:pokemon]
   end
 
-  def character_pokemon
-    puts 'わしの名はオーキド博士'
-    puts 'ポケモンのことならなんでもしっている博士じゃ'
-    puts '今から旅に出るならこの3匹のポケモンの中から好きなポケモンを選ぶとよいぞ'
-
-    puts "*" * 30
-    @pokemon.each.with_index(1) do |pokemon, i|
-      puts "#{i}: #{pokemon.name}, #{pokemon.type}"
-    end
-
+  def choice(pokemon)
     print 'ポケモンをえらんでください > '
     num = gets.to_i
-    p @pokemon = @pokemon[num -1]
+    p pokemon = pokemon[num -1]
+    @pokemon = pokemon
     puts "*" * 30
+  end
+
+  def battle
+    puts @pokemon.name
+    puts @pokemon.type
   end
 end
