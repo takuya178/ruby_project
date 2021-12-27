@@ -13,6 +13,8 @@ class Character
     p pokemon = pokemon[num -1]
     @pokemon = pokemon
     puts "*" * 30
+
+    puts @pokemon.technique[1]
   end
 
   def battle(rival)
@@ -21,8 +23,6 @@ class Character
     puts "#{rival.name}は#{rival.pokemon.name}をくりだした！"
     puts "ゆけ！ #{@pokemon.name}"
     first_select
-
-
   end
 
   # 最初の選択画面

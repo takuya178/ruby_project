@@ -1,7 +1,7 @@
 # 初期ポケモンのデータ
 class Pokemon
   attr_accessor :hp
-  attr_reader :name, :type, :attack, :defense, :speed
+  attr_reader :name, :type, :attack, :defense, :speed, :hitokage, :zenigame, :fusigedane
 
   def initialize(**params)
     @name = params[:name]
@@ -39,6 +39,16 @@ class Pokemon
     )
 
     [ hitokage, zenigame, fusigedane ]
+  end
+
+  def technique
+    if Pokemon.new(name: 'ヒトカゲ', type: 'ほのお', hp: 50, attack: 10, defense: 5, speed: 5)
+      ['たいあたり','なきごえ','ひのこ']
+    elsif Pokemon.new(name: 'ゼニガメ', type: 'みず', hp: 50, attack: 10, defense: 5, speed: 5)
+      ['たいあたり','なきごえ','あわ']
+    elsif Pokemon.new(name: 'フシギダネ', type: 'くさ', hp: 50, attack: 10, defense: 5, speed: 5)
+      ['たいあたり','なきごえ','つるのむち']
+    end
   end
 
   def tutorial
