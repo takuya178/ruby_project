@@ -18,7 +18,6 @@ class Rival
       @pokemon = Pokemon.new(name: 'ヒトカゲ', type: 'ほのお', hp: 50, attack: 10, defense: 5, speed: 5)
     end
     @pokemon.name
-
   end
 
 
