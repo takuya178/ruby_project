@@ -40,7 +40,7 @@ class Character
     puts "*" * 30
 
     if first_s == 1
-      technique_select
+      puts technique_select
     elsif first_s == 2
       puts 'てもちはありません'
       first_select
@@ -55,6 +55,7 @@ class Character
 
   # 技を選択する
   def technique_select
+    pokemon.technique.sample
   end
 end
 

@@ -21,6 +21,4 @@ class Rival
       puts "#{@name}は#{@pokemon.name}を選択した"
     end
   end
-
-
 end
