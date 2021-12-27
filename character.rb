@@ -22,15 +22,10 @@ class Character
     puts "ゆけ！ #{@pokemon.name}"
     first_select
 
-    if @first_s == 1
-      puts 'バトル開始'
-    else
-      puts '少々お待ちお'
-    end
-
 
   end
 
+  # 最初の選択画面
   def first_select
     puts "*" * 30
     selects = ['たたかう', 'どうぐ', 'ポケモン', 'にげる']
@@ -40,11 +35,25 @@ class Character
     end
     print '>'
 
-    @first_s = gets.to_i
-    p @first_s
+    first_s = gets.to_i
+    p first_s
     puts "*" * 30
+
+    if first_s == 1
+      technique_select
+    elsif first_s == 2
+      puts 'てもちはありません'
+      first_select
+    elsif first_s == 3
+      puts '他のポケモンはいません'
+      first_select
+    elsif first_s == 4
+      puts 'バトル中です！ にげられません'
+      first_select
+    end
   end
 
+  # 技を選択する
   def technique_select
   end
 end
