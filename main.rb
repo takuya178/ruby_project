@@ -1,7 +1,7 @@
-require 'pry'
 require_relative "pokemon"
 require_relative "character"
 require_relative "rival"
+
 # require_relative 'main_character'
 # 御三家ポケモンの初期値
 
@@ -9,7 +9,6 @@ require_relative "rival"
 # csvで書いたらこうなる p pokemon = Pokemon.import(path: "Pokemon.csv")
 
 pokemon = Pokemon.seed
-
 character = Character.new(name: '主人公', money: 1000, pokemon: pokemon)
 
 rival = Rival.new(name: '高島ログ', money: 10000, pokemon: pokemon)
