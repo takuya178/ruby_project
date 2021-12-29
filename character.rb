@@ -14,7 +14,7 @@ class Character
     @pokemon = pokemon
     puts "*" * 30
 
-    puts @pokemon.technique[1]
+    puts @pokemon.name == 'ヒトカゲ'
   end
 
   def battle(rival)
@@ -23,6 +23,7 @@ class Character
     puts "#{rival.name}は#{rival.pokemon.name}をくりだした！"
     puts "ゆけ！ #{@pokemon.name}"
     first_select
+
   end
 
   # 最初の選択画面
@@ -40,7 +41,7 @@ class Character
     puts "*" * 30
 
     if first_s == 1
-      puts technique_select
+      technique_select
     elsif first_s == 2
       puts 'てもちはありません'
       first_select
@@ -53,10 +54,26 @@ class Character
     end
   end
 
-  # 技を選択する
-  def technique_select
-    pokemon.technique.sample
+  # ポケモンのそれぞれの技を表示
+  def technique
+    if @pokemon.name == 'ヒトカゲ'
+      ['たいあたり','なきごえ','ひのこ']
+    elsif @pokemon.name == 'ゼニガメ'
+      ['たいあたり','なきごえ','あわ']
+    elsif @pokemon.name == 'フシギダネ'
+      ['たいあたり','なきごえ','つるのむち']
+    end
   end
+
+  # 技がランダムで表示される
+  def technique_select
+    technique.each do |t|
+      p t
+    end
+
+
+  end
+
 end
 
 # たたかうをクリックされたら技名を表示
