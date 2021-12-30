@@ -7,6 +7,7 @@ class Character
     @pokemon = params[:pokemon]
   end
 
+  # ポケモンを選択
   def choice(pokemon)
     print 'ポケモンをえらんでください > '
     num = gets.to_i
@@ -21,7 +22,6 @@ class Character
     puts "#{rival.name}は#{rival.pokemon.name}をくりだした！"
     puts "ゆけ！ #{@pokemon.name}"
     first_select
-
   end
 
   # 最初の選択画面
@@ -65,8 +65,8 @@ class Character
 
   # 技がランダムで表示される
   def technique_select
-    technique.each do |t|
-      p t
+    technique.each.with_index(1) do |t, i|
+      puts "#{i}: #{t}"
     end
 
 
