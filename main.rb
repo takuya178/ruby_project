@@ -2,6 +2,7 @@ require_relative "pokemon"
 require_relative "character"
 require_relative "rival"
 require_relative "tutorial"
+require_relative "string"
 
 # require_relative 'main_character'
 # 御三家ポケモンの初期値

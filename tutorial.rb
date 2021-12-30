@@ -14,7 +14,7 @@ class Tutorial
     puts "*" * 30
   
     @pokemon.each.with_index(1) do |pokemon, i|
-      puts "#{i}: #{pokemon.name}, #{pokemon.type}"
+      puts "#{i}: #{pokemon.name.mb_ljust(10)}, #{pokemon.type}タイプ"
     end
   end
 end

@@ -13,8 +13,6 @@ class Character
     p pokemon = pokemon[num -1]
     @pokemon = pokemon
     puts "*" * 30
-
-    puts @pokemon.name == 'ヒトカゲ'
   end
 
   def battle(rival)
