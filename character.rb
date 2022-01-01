@@ -68,11 +68,8 @@ class Character
     technique.each.with_index(1) do |t, i|
       puts "#{i}: #{t}"
     end
-
-
   end
 
 end
 
-# たたかうをクリックされたら技名を表示
-# たいあたり、ひのこ、はっぱがったー、なきごえなどの技名がある。
+# 技を選択してそれぞれダメージを計算する
