@@ -22,7 +22,10 @@ class Character
     puts "#{rival.name}は#{rival.pokemon.name}をくりだした！"
     puts "ゆけ！ #{@pokemon.name}"
     first_select
+    technique_damage
   end
+
+  private
 
   # 最初の選択画面
   def first_select
@@ -68,6 +71,21 @@ class Character
     technique.each.with_index(1) do |t, i|
       puts "#{i}: #{t}"
     end
+
+    puts "*" * 30
+    print '>'
+
+    @technique_judge = gets.to_i
+    p @technique_judge
+    puts "*" * 30
+  end
+
+  # 技のダメージをそれぞれ定義
+  def technique_damage
+    if @technique_judge == 1
+      puts "#{@pokemon.name}の攻撃！"
+      puts "たいあたりをくりだした"
+    end  
   end
 
 end
