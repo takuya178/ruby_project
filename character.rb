@@ -76,7 +76,6 @@ class Character
     print '>'
 
     @technique_judge = gets.to_i
-    p @technique_judge
     puts "*" * 30
   end
 
@@ -85,6 +84,11 @@ class Character
     if @technique_judge == 1
       puts "#{@pokemon.name}の攻撃！"
       puts "たいあたりをくりだした"
+    elsif @technique_judge == 2
+      puts "#{@pokemon.name}の攻撃！"
+      puts "なきごえをくりだした"
+    else
+      puts "スペシャルあったっく"
     end  
   end
 
