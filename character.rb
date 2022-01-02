@@ -101,10 +101,10 @@ class Character
 
     if attack == "normal_attack"
       damage = @pokemon.attack - rival.pokemon.defense
-      hit_point = rival.pokemon.hp - damage
+      rival.pokemon.hp -= damage
       puts "#{@pokemon.name}の攻撃！"
       puts "たいあたりをくりだした"
-      puts "残りのhpは#{hit_point}"
+      puts "残りのhpは#{rival.pokemon.hp}"
     elsif attack == "down_attack"
       @pokemon.attack - DAMAGE_DOWN
       puts "#{@pokemon.name}の攻撃！"
@@ -112,11 +112,11 @@ class Character
       puts "#{rival.pokemon.name}のこうげきりょくがさがった"
     else
       damage = @pokemon.attack * SPECIAL_ATTACK
-      hit_point = rival.pokemon.hp - damage
+      rival.pokemon.hp -= damage
       puts "#{@pokemon.name}の攻撃！"
       puts "#{technique[2]}をくりだした"
       puts "こうかはいまひとつだ！"
-      puts "残りのhpは#{hit_point}" 
+      puts "残りのhpは#{rival.pokemon.hp}" 
     end
   end
 end

@@ -24,5 +24,10 @@ rival.rival_choice(character)
 # ライバルとバトル
 character.battle(rival)
 
+loop do
+  character.battle(rival)
+  break if rival.pokemon.hp <= 95
+end
 
-# バトルに勝利して経験値をもらう
+
+
