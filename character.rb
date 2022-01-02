@@ -1,8 +1,8 @@
 class Character
   attr_reader :name, :money, :pokemon
 
-  NOMAL_DAMAGE = 5
-  DOWN_DAMAGE = 1
+  DAMAGE_DOWN = 1
+  SPECIAL_ATTACK = 0.8
 
   def initialize(**params)
     @name = params[:name]
@@ -25,8 +25,8 @@ class Character
     puts "#{rival.name}は#{rival.pokemon.name}をくりだした！"
     puts "ゆけ！ #{@pokemon.name}"
     first_select
-    attach_type = technique_damage
-    technique_params(rival: rival, attack: attach_type)
+    attack_type = technique_damage
+    technique_params(rival: rival, attack: attack_type)
   end
 
   private
@@ -86,40 +86,37 @@ class Character
   # 技のダメージをそれぞれ定義
   def technique_damage
     if @technique_judge == 1
-      puts "#{@pokemon.name}の攻撃！"
-      puts "たいあたりをくりだした"
       "normal_attack"
     elsif @technique_judge == 2
-      puts "#{@pokemon.name}の攻撃！"
-      puts "なきごえをくりだした"
       "down_attack"
     else
-      puts "スペシャルあったっく"
       "special_attack"
     end  
   end
 
-  # たいあたりのダメージ計算
+  # 技のダメージ
   def technique_params(**params)
     rival = params[:rival]
     attack = params[:attack]
 
     if attack == "normal_attack"
-      puts rival.pokemon.name
+      damage = @pokemon.attack - rival.pokemon.defense
+      hit_point = rival.pokemon.hp - damage
+      puts "#{@pokemon.name}の攻撃！"
+      puts "たいあたりをくりだした"
+      puts "残りのhpは#{hit_point}"
+    elsif attack == "down_attack"
+      @pokemon.attack - DAMAGE_DOWN
+      puts "#{@pokemon.name}の攻撃！"
+      puts "なきごえをくりだした"
+      puts "#{rival.pokemon.name}のこうげきりょくがさがった"
+    else
+      damage = @pokemon.attack * SPECIAL_ATTACK
+      hit_point = rival.pokemon.hp - damage
+      puts "#{@pokemon.name}の攻撃！"
+      puts "#{technique[2]}をくりだした"
+      puts "こうかはいまひとつだ！"
+      puts "残りのhpは#{hit_point}" 
     end
-    
   end
-
-  # なきごえのダメージ計算
-  # def down_damage
-  #   @pokemon.attack - DOWN_DAMAGE
-  # end
-
-  # # スペシャル技のダメージ計算
-  # def special_damage
-  #   @pokemon.
-  # end
-
 end
-
-# 技を選択してそれぞれダメージを計算する
