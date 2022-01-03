@@ -2,6 +2,7 @@ require_relative "pokemon"
 require_relative "character"
 require_relative "rival"
 require_relative "tutorial"
+require_relative "string"
 
 # require_relative 'main_character'
 # 御三家ポケモンの初期値
@@ -23,5 +24,10 @@ rival.rival_choice(character)
 # ライバルとバトル
 character.battle(rival)
 
+loop do
+  character.battle(rival)
+  break if rival.pokemon.hp <= 95
+end
 
-# バトルに勝利して経験値をもらう
+
+

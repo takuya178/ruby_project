@@ -16,7 +16,7 @@ class Pokemon
     hitokage = Pokemon.new(
       name: 'ヒトカゲ',
       type: 'ほのお',
-      hp: 50,
+      hp: 100,
       attack: 10,
       defense: 5,
       speed: 5
@@ -24,7 +24,7 @@ class Pokemon
     zenigame = Pokemon.new(
       name: 'ゼニガメ',
       type: 'みず',
-      hp: 50,
+      hp: 100,
       attack: 10,
       defense: 5,
       speed: 5
@@ -32,26 +32,12 @@ class Pokemon
     fusigedane = Pokemon.new(
       name: 'フシギダネ',
       type: 'くさ',
-      hp: 50,
+      hp: 100,
       attack: 10,
       defense: 5,
       speed: 5
     )
 
     [ hitokage, zenigame, fusigedane ]
-  end
-
-
-
-  def tutorial
-    puts 'わしの名はオーキド博士'
-    puts 'ポケモンのことならなんでもしっている博士じゃ'
-    puts '今から旅に出るならこの3匹のポケモンの中から好きなポケモンを選ぶとよいぞ'
-
-    puts "*" * 30
-  
-    @pokemon.each.with_index(1) do |pokemon, i|
-      puts "#{i}: #{pokemon.name}, #{pokemon.type}"
-    end
   end
 end
